@@ -1,0 +1,33 @@
+<template name='categories'>
+
+<div class='col-md-6'>
+
+  <table class='table'>
+    <tr>
+    	<td><input type='text' name='categoryName' placeholder='Add new Rating Category' class='newCategory' /></td>
+    	<td> <button class='btn btn-primary btn-xl addNewCategory'> Add </button></td>
+    </tr>
+  </table>
+
+
+  <h2> Rating Category List </h2>
+
+  <table class='table'>
+   <thead>
+   	 <tr>
+  		<th> Category Name </th> <th> Actions</th>
+  	</tr>
+   </thead>
+   {{#each categories}}
+   <tbody>
+   	<tr>
+   		<td> {{name}}</td> <td> <!--<button class='btn btn-warning btn-xs changeCategory'> Change</button>--></td>
+   		<td> <button class='btn btn-danger btn-xs deleteCategory'>Delete</button></td>
+   	</tr>
+   </tbody>
+   {{/each}}
+  </table>
+
+ </div>
+
+</template>

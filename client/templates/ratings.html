@@ -1,0 +1,81 @@
+<template name='ratings'>
+
+  <table class='table'>
+    <tr>
+      <td>
+      <input type='number' step='any' min='1' max='6' name='rating' placeholder='Choose Rating' class='chooseRating' />
+      <!--<select class='chooseRating'>
+
+        <option value=''> Choose rating </option>
+        <option value='1'>1</option>
+        <option value='1.5'>1.5</option>
+        <option value='2'>2</option>
+        <option value='2.5'>2.5</option>
+        <option value='3'>3</option>
+        <option value='3.5'>3.5</option>
+        <option value='4'>4</option>
+        <option value='4.5'>4.5</option>
+        <option value='5'>5</option>
+        <option value='5.5'>5.5</option>
+        <option value='6'>6</option>
+
+      </select>-->
+
+      <select class='rCategory'>
+          <option value=''> Choose Category</option>
+          {{#each categories}}
+          <option value="{{name}}" > {{name}} </option>
+          {{/each}}
+      </select>
+
+      </td>
+      <td> <input type='text' name='description' class='ratingDesc' placeholder='Rating description' /> </td>
+      <td> <button class='btn btn-primary btn-xl addNewRating' > Add </button></td>
+    </tr>
+  </table>
+
+  <table class='table'>
+    <thead>
+      <tr>
+        <th> <h3><b>{{subject.name}}</b></h3> </th> <th> Category </th> <th>Description</th> <th>Actions </th>
+      </tr>
+    </thead>
+   {{#each ratings}}
+    <tbody>
+    {{#if editRating}}
+
+    <tr>
+        <td> <input type='text' name='value' value="{{value}}" class='editRating edit-rating-value' /></td>
+        <td> <!-- <input type='text' name='category' value="{{category}}" class='edit-rating' />  -->
+        <select class='rCategory editRating edit-rating-category'>
+          <option value=''> Choose Category</option>
+          {{#each categories}}
+          <option value="{{name}}" > {{name}} </option>
+          {{/each}}
+         </select>
+
+        </td>
+        <td> <input type='text' name='description' value="{{description}}" class='editRating edit-rating-description' /></td>
+        <td>
+          <button class='btn btn-xs cancelEditRating' > Cancel </button>
+        </td>
+    </tr>
+
+    {{else}}
+      <tr>
+        <td> {{value}}</td>
+        <td> {{category}}</td>
+        <td> {{description}}</td>
+        <td>
+         <button class='btn btn-warning btn-xs updateRating'> Change </button>
+         <button class='btn btn-danger btn-xs deleteRating' > Delete </button>
+        </td>
+      </tr>
+
+    {{/if}}
+
+    </tbody>
+   {{/each}}
+  </table>
+
+</template>

@@ -1,0 +1,26 @@
+<template name='subjects'>
+
+  <table>
+    <tr>
+      <td>  <input type='text' name='name' placeholder='New Subject' class='newSubject' ></td>
+      <td> <button class='btn btn-primary btn-xs addNewSubject'> Add </button></td>
+    </tr>
+  </table>
+
+   <table class='table'>
+    <thead>
+      <tr>
+        <th> Subjects </th> <th>Actions</th>
+      </tr>
+    </thead>
+     {{#each studentSubjects}}
+    <tbody>
+      <tr>
+        <td> <a href='#' class='subjectName'>{{name}}</a></td> 
+        <td> <button class='btn btn-danger btn-xs deleteSubject' > Delete </button></td>
+      </tr>
+    </tbody>
+     {{/each}}
+  </table>
+
+</template>

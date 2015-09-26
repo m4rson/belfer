@@ -1,0 +1,33 @@
+<template name='studentsList'>
+      <span class='stList'><h2>Students List</h2></span>
+     <h2> {{group.name}} </h2>
+      <table class='table'>
+        <tr>
+          <td> <input type='text' name='lastName' placeholder='Last Name' class='lName' /> </td>
+          <td> <input type='text' name='firstName' placeholder='First Name' class='fName'/> </td> 
+          <td> <button class='btn btn-primary btn-xl addNewStudent'> Add </button> </td>
+        </tr>
+      </table>
+       <table class='table'>
+           <thead>
+           	<tr>
+           		<th> Last Name </th> <th> First Name </th> <th> Actions</th>
+           	</tr>
+           	</thead>
+            {{#each students}}
+           	<tbody>
+           	<tr>
+            
+           <td class='studentLastName'> <a href="{{pathFor 'students/:lastName'}}" class='showStudent'>{{lastName}}</a> </td>
+          <td class='studentFName'>  <a href="{{pathFor 'students/:lastName'}}" class='showStudent'>{{firstName}}</a> </td>
+            
+              <!--<td> <button class='btn btn-warning btn-sm' > Edit </button></td>-->
+
+              <td> <button class='btn btn-danger btn-xs'> Delete </button></td>
+              <!--<td> <button class='btn btn-primary btn-xs addStudentSubject' >Subjects</button></td>-->
+           	</tr>
+           	</tbody>
+            {{/each}}
+        </table>
+
+</template>

@@ -1,0 +1,27 @@
+<template name='groups'>
+        <h2> Groups	</h2>	
+        <input type='text' name='name' placeholder='New Group' class='groupName input-large' /> 
+        <button class='btn btn-primary btn-xs addNewGroup'> Add </button>	
+
+
+        <table class='table'>
+           <thead>
+           	  <tr>
+           	  	<th> Group Name </th><th>Students</th> <th> Actions </th>
+           	  </tr>
+           </thead>
+         {{#each currentUserGroups}}
+           <tbody>
+
+        
+           	<tr>
+           <td> <a href='#' class='groupNameList'> {{name}} </a></td> 
+           <td> {{studentsNumber}}</td>
+           <td><button class='btn btn-danger btn-xs'>Delete</button></td>
+           	</tr>
+           </tbody>
+       
+         {{/each}}	
+
+       </table>		
+</template>

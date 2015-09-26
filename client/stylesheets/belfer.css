@@ -1,0 +1,41 @@
+/* CSS declarations go here */
+.yield{
+	margin-top: 50px;
+}
+
+.home_container{
+	text-align: center;
+}
+
+.logoutButton{
+	background: none;
+	border: none;
+	color: #fff;
+	margin-top:15px;
+}
+.logoutButton:hover{
+	background: #750C13;
+}
+
+.students .stList{
+	text-align: center;
+}
+
+.rCategory{
+	background: #333;
+	color: #eee;
+}
+
+.belfLogo{
+	padding-top: 5px; 
+}
+
+
+input[type=text]:focus{
+	box-shadow: 0 0 3px #0C5391;
+
+}
+input[type=number]:focus{
+	box-shadow: 0 0 3px #0C5391;
+
+}
